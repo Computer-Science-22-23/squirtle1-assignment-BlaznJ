@@ -44,11 +44,15 @@ public class SquirtleThing extends PokeThing {
 		blocked = getBoard().thingAt(nextLoc) instanceof PokeThing;
 		stuck = !(nextLoc.isValid(getBoard()));
 		
-		if (blocked || stuck)
+		if (blocked)
 		{
-			setDirection(getDirection().forward()); //	
-		}
+			g.appendTextWindow("Squirtle sees bulbasaur");
+			setDirection(getDirection().forward());
+			setDirection(getDirection().right());
+			
+		} else (stuck)
 				
 		move();
+		squaresMoved += 1
 	}
 }
